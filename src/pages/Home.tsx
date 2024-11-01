@@ -1,15 +1,10 @@
-// src/pages/Home.tsx
-
 import React, { useState, useEffect, useRef } from "react";
 import ShoeGif from "../assets/images/spinningshoe.gif";
 import Infographic from "../assets/images/infographic.png";
-import Chevron from "../assets/icons/chevron.svg";
 import "../App.css";
 import Purchase from "../components/Purchase";
 import VideoFile from "../assets/videos/samplevideo.mp4";
-import { useSwipeable } from "react-swipeable";
 
-// Define prop type for setLogoColor
 type HomeProps = {
   setLogoColor: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -85,17 +80,14 @@ const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
 
   useEffect(() => {
     if (isSecondPageVisible) {
-      setLogoColor("black"); // Change to black when on the second page
+      setLogoColor("black");
     } else {
-      setLogoColor("white"); // Change back to white when not on the second page
+      setLogoColor("white");
     }
   }, [isSecondPageVisible, setLogoColor]);
 
   return (
     <div className="snap-y snap-mandatory h-screen overflow-hidden">
-      {" "}
-      {/* Ensures no overflow for snapping */}
-      {/* Initial Animation Steps */}
       <div
         className={`${
           (animationStep ?? 0) < 6
@@ -126,7 +118,6 @@ const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
           Measure what moves you
         </p>
       </div>
-      {/* Full Scroll Page Content with Fade-in Transition */}
       <div
         className={`${
           animationStep === 6 ? "fade-in" : "hidden"
@@ -212,7 +203,6 @@ const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
             className="w-[60%] h-[60%] max-h-[80vh] object-contain z-10 absolute inset-0 m-auto hidden lg:block"
           />
 
-          {/* Content positioned in bottom-left corner for large screens */}
           <div className="p-8 md:px-24 lg:px-16 xl:px-24 lg:w-1/2 xl:w-1/3 text-black z-20 relative lg:absolute lg:bottom-12 lg:left-8 hidden lg:block">
             <h3 className="text-title font-semibold md:text-titlemd xl:text-titlexl">
               Stay on track
@@ -223,7 +213,6 @@ const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
             </p>
           </div>
 
-          {/* Video and Infographic for small and medium screens */}
           <div className="p-8 md:px-24 lg:px-16 xl:px-24 lg:w-[50%] xl:w-[40%] space-y-2 block lg:hidden z-20 relative">
             <img
               src={Infographic}
@@ -240,12 +229,11 @@ const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
           </div>
         </section>
 
-        {/* Other Sections */}
+        {/* Page 3 - purchase section*/}
         <div ref={finalSectionRef}>
           <Purchase />
         </div>
 
-        {/* Scroll Indicator */}
         <div
           className={`w-full fixed bottom-0 flex flex-col items-center p-4 transition-opacity duration-500 ${
             isFinalSectionVisible ? "opacity-0 text-black" : "opacity-100"

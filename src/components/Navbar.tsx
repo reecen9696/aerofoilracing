@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
 type NavbarProps = {
-  color: string; // Add color prop for dynamic logo color
+  color: string;
 };
 
 const Navbar: React.FC<NavbarProps> = ({ color }) => {

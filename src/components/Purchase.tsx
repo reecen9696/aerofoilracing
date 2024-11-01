@@ -11,7 +11,6 @@ const Purchase: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [Purchase1, Purchase2, Purchase3];
 
-  // Swap the logic for previous and next
   const goToPreviousImage = () => {
     setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
@@ -47,7 +46,6 @@ const Purchase: React.FC = () => {
     <div className="w-full h-full md:flex md:justify-center">
       <section className="w-full h-screen snap-start overflow-y-auto flex flex-col items-center sm:justify-start px-9 pt-32 xl:pt-48 xl:w-[50%]">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Swipeable Image Carousel with Sliding Effect */}
           <div
             className="relative w-full overflow-hidden"
             onTouchStart={handleTouchStart}

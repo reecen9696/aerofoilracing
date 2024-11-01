@@ -53,7 +53,6 @@ const PurchaseButton: React.FC<PurchaseButtonProps> = ({ selectedSize }) => {
       const product = await window.shopifyClient.product.fetch(formattedId);
 
       if (product) {
-        // Find the variant that matches the selected size
         const selectedVariant = product.variants.find(
           (variant: any) => variant.title === selectedSize
         );
@@ -71,7 +70,6 @@ const PurchaseButton: React.FC<PurchaseButtonProps> = ({ selectedSize }) => {
           lineItems
         );
 
-        // Redirect to the Shopify checkout page
         window.location.href = checkout.webUrl;
       }
     } catch (error) {
