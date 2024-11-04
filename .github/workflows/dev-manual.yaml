@@ -8,7 +8,7 @@ jobs:
       uses: './.github/workflows/base.yaml'
       with:
         ENVIRONMENT: dev
-        BUCKET_NAME: 'dev.share.getallmyrecipes.com'
+        BUCKET_NAME: 'dev.gostride.ai'
         BUILD_ENV: dev
       secrets:
         AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
