@@ -1,0 +1,16 @@
+name: deploy-dev-manual
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+      uses: './.github/workflows/base.yaml'
+      with:
+        ENVIRONMENT: dev
+        BUCKET_NAME: 'dev.gostride.ai'
+        BUILD_ENV: dev
+      secrets:
+        AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+    
