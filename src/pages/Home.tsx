@@ -10,7 +10,7 @@ type HomeProps = {
 };
 
 const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
-  const skipLoading = false; // Set to `true` to skip loading pages, `false` to show them
+  const skipLoading = true; // Set to `true` to skip loading pages, `false` to show them
   const [animationStep, setAnimationStep] = useState<number | null>(null);
   const [isFinalSectionVisible, setIsFinalSectionVisible] = useState(false);
   const [isSecondPageVisible, setIsSecondPageVisible] = useState(false);
@@ -173,7 +173,7 @@ const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
           className="w-full min-h-screen flex items-center justify-center snap-start relative bg-white"
         >
           {/* Video Background - Large screens */}
-          <div className="absolute w-[11%] h-[30%] top-[30%] left-[44%] overflow-hidden hidden lg:block">
+          <div className="absolute lg:w-[11%] lg:h-[32%] lg:top-[30%] xl:w-[12%] xl:h-[32%] xl:top-[30%] left-[44%] overflow-hidden hidden lg:block">
             <video
               className="w-full h-full object-contain max-w-full max-h-full"
               src={VideoFile}
@@ -185,7 +185,7 @@ const Home: React.FC<HomeProps> = ({ setLogoColor }) => {
           </div>
 
           {/* Video Background - Small and Medium screens */}
-          <div className="absolute w-[40%] h-[24%] top-[27.5%] inset-0 mx-auto overflow-hidden block lg:hidden">
+          <div className="absolute  md:w-[40%] md:h-[24%] md:-left-[9%] md:top-[26%] w-[40%] h-[24%] top-[27.5%] inset-0 mx-auto overflow-hidden block lg:hidden">
             <video
               className="w-full h-full object-contain max-w-full max-h-full"
               src={VideoFile}

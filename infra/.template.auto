@@ -1,4 +1,0 @@
-environment = "sandbox"
-hosted_zone_name = "allmyrecipes.co"
-domain = "allmyrecipes.co"
-subdomain = "sharesandbox."
